@@ -1,0 +1,9 @@
+// update sandstorm
+//
+@ShutdownOnFailedCommand 1 
+@NoPromptForPassword 1
+
+force_install_dir ../Insurgency/
+login anonymous 
+app_update 581330 validate
+quit
