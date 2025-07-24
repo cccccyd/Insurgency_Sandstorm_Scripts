@@ -20,7 +20,7 @@ Windows中要使用这些脚本可以使用`Git Bash`执行这些脚本
 
 ### rcon && rcon.exe
 
-![rcon-cli](https://github.com/gorcon/rcon-cli)中的rcon可执行文件，ELF文件用于Linux x64发行版，`.exe`文件用于windows x64平台
+[rcon-cli](https://github.com/gorcon/rcon-cli)中的rcon可执行文件，ELF文件用于Linux x64发行版，`.exe`文件用于windows x64平台
 
 部分脚本依赖于rcon文件，请用户自行修改rcon的地址（最好将该文件加入环境变量，部分脚本依赖于直接调用rcon文件）
 
@@ -33,8 +33,38 @@ Windows中要使用这些脚本可以使用`Git Bash`执行这些脚本
 
 ### addAdmin.sh
 该脚本用于向服务器中添加管理员，请先将脚本中的路径改为一个或多个服务器的Admins.txt所在路径（一行一个路径）
+
 `Usage: bash addAdmin.sh <SteamID>`
 
 如：`bash addAdmin.sh 76561198787872653` 
 
-### 
+### multiple_ban.sh
+该脚本用于封禁服务器中的玩家，需要先填充multiple_ban.sh中的服务器信息，脚本参数为
+
+`<服务器列表，如1,3,5> <玩家ID/名称> [封禁原因]`
+
+`Usage: bash multiple_ban.sh 1,2,3 76561198787872653 侮辱性语言`
+
+OR
+
+`Usage: bash multiple_ban.sh 1-3 76561198787872653 侮辱性语言`
+
+### select_player.sh
+
+该脚本用于封禁服务器中的玩家，需要先填充select_player.sh中的服务器信息
+
+`Usage: bash select_player.sh <server_index>`
+
+OR
+
+`Usage: bash select_player.sh 1`
+
+### update_server.sh
+该脚本用于更新服务端（虽然这游戏不怎么更新），该脚本会调用`steam/update.sh`，请确保`steam/`目录下存放了steamcmd.sh，并在`update.txt`中填写正确的更新游戏路径（否则就会在指定的游戏路径下下载游戏）
+
+`Usage: bash update_server.sh`
+
+### Config/Server && Saved/Config/LinuxServer
+这两个目录下存放了服务器常用的配置文件
+
+需要注意的是，Saved/Config/LinuxServer中存放的文件必须在服务器关闭时修改（服务器执行关闭动作时，会将服务器正在执行的规则写回文件，因此当服务器运行时修改这些配置文件将会被服务端关闭时覆盖）
