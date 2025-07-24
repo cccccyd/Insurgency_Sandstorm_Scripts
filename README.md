@@ -1,7 +1,7 @@
 # Insurgency Sandstorm Scripts
 
 ### Intro
-This is a very personal repository, the scripts contains lots of Chinese characters(and I dont have enough time to rewrite these scripts to english, sorry), so the most part of README.md is written by Chinese.
+This is a repository of scripts for insurgency sandstorm dedicated server, these scripts contain lots of Chinese characters(and we dont have enough time to rewrite these scripts to english, sorry), so the most part of README.md is written by Chinese.
 
 Use the `Git Bash` if you want to execute these scripts on windows platform.
 
@@ -34,6 +34,7 @@ Windows中要使用这些脚本可以使用`Git Bash`执行这些脚本
 ### addAdmin.sh
 该脚本用于向服务器中添加管理员，请先将脚本中的路径改为一个或多个服务器的Admins.txt所在路径（一行一个路径）
 `Usage: bash addAdmin.sh <SteamID>`
+
 如：`bash addAdmin.sh 76561198787872653` 
 
 ### 
